@@ -1,39 +1,3 @@
-//var arrSlotMachine = [];
-//
-//class Casino{
-//      constructor(countMachines, startSum) {
-//        this.countMachines = function (countMachine) {
-//            var zal = 1;
-//            var inputSum = 2;
-//            
-//            for(var i = 0; i<countMachine; i++) {
-//                if (i = 0) {
-//                    var cash = zal + inputSum;
-//                   var newSlotMachine = new SlotMachine (cash); 
-//                } else {
-//                var newSlotMachine = new SlotMachine (inputSum);
-//                }
-//                
-//                arrSlotMachine.push(newSlotMachine);
-//            }
-//        };
-//        this.startSum = startSum;
-//        
-//    }
-//    //let a = (startSumMachine - zalushok)/countMachine;
-//}
-//
-//class SlotMachine {
-//     constructor(startSumMachine) {
-//        this.startSumMachine = startSumMachine;
-//    }
-//}
-//
-//var secondCasino = new Casino (5, 123);
-//console.log(secondCasino);
-
-//task "Casino"
-
 class SlotMachine {
     constructor(slotMoney) {
         this.slotMoney = slotMoney;
@@ -89,11 +53,11 @@ class Casino {
     }
     initializeInstances(random, amountToInitialize, reminder) {
         for (let i = 0; i < this.quantitySlotMachine; i++) {
-            if (i == 0 && i == random) {
+            if (i === 0 && i === random) {
                 this.machinesInstanses.push(new SlotMachine(amountToInitialize + reminder));
-            } else if (i == random) {
+            } else if (i === random) {
                 this.machinesInstanses.push(this.lucky = new SlotMachine(amountToInitialize));
-            } else if (i == 0) {
+            } else if (i === 0) {
                 this.machinesInstanses.push(new SlotMachine(amountToInitialize + reminder));
             }
             this.machinesInstanses.push(new SlotMachine(amountToInitialize));
@@ -110,7 +74,7 @@ class Casino {
 
     addNewMachine() {
         let maxMoney = 0;
-        let donorMachine = {};
+        let donorMachine = [];
         for (let i of this.machinesInstanses) {
             if (i.money > maxMoney) {
                 maxMoney = i.money;
