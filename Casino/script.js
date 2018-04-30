@@ -58,11 +58,11 @@ class SlotMachine {
             this.slotMoney -= number * 4;
             return number * 4;
         }
-        return 'Fail! Goodbay ';
+        return 'Fail! Goodbay money!';
 
     }
 
-    get allMoney() {
+    allMoney() {
         return 'Remainder of money - ' + this.slotMoney;
     }
 
@@ -105,11 +105,11 @@ class Casino {
         }
     }
 
-    get allMoney() {
+    allMoney() {
         return this.bank;
     }
 
-    get allMachines() {
+     allMachines() {
         return this.machinesInstanses.length;
     }
 
@@ -161,14 +161,14 @@ class Casino {
     }
 }
 var casino = new Casino(10, 5831);
-console.log('General sum in casino - ' + casino.allMoney);
-console.log('Count of machine - ' + casino.allMachines);
+console.log('General sum in casino - ' + casino.allMoney());
+console.log('Count of machine - ' + casino.allMachines());
 console.log(casino.addNewMachine());
 console.log(casino.removeMachine(5));
 console.log(casino.getMoney(500));
 
 var machine = new SlotMachine(500);
 console.log(machine.playTheGame(5))
-console.log(machine.allMoney);
+console.log(machine.allMoney());
 console.log(machine.getMoney(200));
 console.log(machine.addMoney(173));
