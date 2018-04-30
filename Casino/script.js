@@ -39,7 +39,7 @@ class SlotMachine {
         this.slotMoney = slotMoney;
         this.number = '';
     }
-
+    
     randomNumber(number) {
         let rand = this.number;
         for (let i = 0; i < 3; i++) {
@@ -48,7 +48,7 @@ class SlotMachine {
         console.log('Generate number - ' + rand);
         return rand;
     }
-
+    
     playTheGame(number) {
         var game = this.randomNumber();
 
@@ -59,22 +59,18 @@ class SlotMachine {
             return number * 4;
         }
         return 'Fail! Goodbay money!';
-
     }
-
+    
     allMoney() {
         return 'Remainder of money - ' + this.slotMoney;
     }
-
+    
     getMoney(sum) {
-
         if (sum < this.slotMoney) {
             return 'Withdraw of money - ' + sum + '. Remainder - ' + (this.slotMoney - sum);
         }
-
         return 'You are trying to exept the non-existent sum';
     }
-
     addMoney(addingSum) {
         return 'Added sum - ' + addingSum + '. General sum - ' + (this.slotMoney += addingSum);
     }
@@ -91,7 +87,6 @@ class Casino {
         this.lucky = false;
         this.initializeInstances(random, amountToInitialize, reminder);
     }
-
     initializeInstances(random, amountToInitialize, reminder) {
         for (let i = 0; i < this.quantitySlotMachine; i++) {
             if (i == 0 && i == random) {
@@ -104,7 +99,7 @@ class Casino {
             this.machinesInstanses.push(new SlotMachine(amountToInitialize));
         }
     }
-
+    
     allMoney() {
         return this.bank;
     }
