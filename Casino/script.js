@@ -3,7 +3,6 @@ class SlotMachine {
         this.slotMoney = slotMoney;
         this.number = '';
     }
-    
     randomNumber(number) {
         let rand = this.number;
         for (let i = 0; i < 3; i++) {
@@ -12,7 +11,6 @@ class SlotMachine {
         console.log('Generate number - ' + rand);
         return rand;
     }
-    
     playTheGame(number) {
         var game = this.randomNumber();
 
@@ -24,11 +22,9 @@ class SlotMachine {
         }
         return 'Fail! Goodbay money!';
     }
-    
     allMoney() {
         return 'Remainder of money - ' + this.slotMoney;
     }
-    
     getMoney(sum) {
         if (sum < this.slotMoney) {
             return 'Withdraw of money - ' + sum + '. Remainder - ' + (this.slotMoney - sum);
@@ -39,7 +35,6 @@ class SlotMachine {
         return 'Added sum - ' + addingSum + '. General sum - ' + (this.slotMoney += addingSum);
     }
 }
-
 class Casino {
     constructor(quantitySlotMachine, bank) {
         this.quantitySlotMachine = quantitySlotMachine;
@@ -63,15 +58,12 @@ class Casino {
             this.machinesInstanses.push(new SlotMachine(amountToInitialize));
         }
     }
-    
     allMoney() {
         return this.bank;
     }
-
      allMachines() {
         return this.machinesInstanses.length;
     }
-
     addNewMachine() {
         let maxMoney = 0;
         let donorMachine = [];
@@ -85,7 +77,6 @@ class Casino {
             return 'This machine was added. General sum of machine - ' + this.machinesInstanses.length;
         }
     }
-
     removeMachine(number) {
         if (this.machinesInstanses.length > number) {
             let removedMoney = this.machinesInstanses[number - 1].money / this.machinesInstanses.length - 1;
@@ -96,9 +87,7 @@ class Casino {
             return 'Namber of machine - ' + number + ' deleted. Reminder - ' + this.machinesInstanses.length
         }
         return 'This machine was deleted.';
-
     }
-
     getMoney(sum) {
         if (sum < this.bank) {
             let sumOfMoney = 0;
